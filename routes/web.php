@@ -15,6 +15,10 @@ use App\Http\Controllers\LlamaController;
 
 // Route::get('/', 'WelcomeController@index');
 
+Route::get('/{any}', function () {
+    return view('App');
+})->where('any', '.*');
+
 Route::get('/', [WelcomeController::class, 'index']);
 
 Route::get('/chatbot', function () {
@@ -38,4 +42,4 @@ Route::get('/react', function () {
 // Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
 
-Route::resource('products', ProductController::class);
+// Route::resource('products', ProductController::class);
